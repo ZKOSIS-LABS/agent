@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>SingleTom</title>
+    <script src="jquery_3_5_1.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <script src="functions.js"></script>
+    <script src="apikeys.js"></script>
+    <script src="agents.js"></script>
+    <script src="models.js"></script>
+    <script src="dropTextFile.js"></script>
+</head>
+
+<body>
+    <table width="100%">
+        <tr>
+            <td>
+                <h1 id="agentHeading"></h1>
+            </td>
+            <td align="right">
+                <button id="skinButton">Background</button>
+            </td>
+        </tr>
+    </table>
+    <div class="myDiv">
+        <span><b>SYSTEM PROMPT</b> - </span>
+        <label for="agent">Agent:</label>
+        <select id="agent" title="Use this agent"></select> <span id="agentDescription" class="grey">.</span>
+        <textarea id="systemprompt" title="This is the agent configuration" class="txtarea" rows="4" cols="50"
+            placeholder="SYSTEM PROMPT..."></textarea>
+    </div>
+    <div class="myDiv">
+        <span><b>HISTORY</b></span>
+        <button id="but_ClearHistory" title="Clear the History">Clear</button>
+        <textarea id="history"
+            title="This is the conversation history (memory). You can edit it and drag/drop text documents here to add them."
+            class="txtarea DropfileContent" rows="4" cols="50"
+            placeholder="HISTORY... (Drag/drop text documents here)"></textarea>
+    </div>
+    <div class="myDiv">
+        <span><b>USER PROMPT</b> </span>
+        <button id="but_ClearPrompt" title="Clear the prompt">Clear</button>
+        <textarea id="userprompt" title="Write your prompt here" class="txtarea" rows="4" cols="50"
+            placeholder="USER PROMPT..."></textarea>
+        <button id="but_send" title="Send the prompt">Send</button>
+        <label for="model">Model:</label>
+        <select id="model" title="Use this model"></select>
+        <label for="temperature">Temp:</label>
+        <select id="temperature" title="Randomness">
+            <option value="0.01">0.01</option>
+            <option value="0.1">0.1</option>
+            <option value="0.2">0.2</option>
+            <option value="0.3" selected>0.3</option>
+            <option value="0.4">0.4</option>
+            <option value="0.5">0.5</option>
+            <option value="0.6">0.6</option>
+            <option value="0.7">0.7</option>
+            <option value="0.8">0.8</option>
+            <option value="0.9">0.9</option>
+            <option value="1.0">1.0</option>
+        </select>
+        <label for="max_tokens">Max:</label>
+        <select id="max_tokens" title="Reserve this many tokens for the agents response">
+            <option value="auto" selected>AUTO</option>
+            <option value="256">256</option>
+            <option value="400">400</option>
+            <option value="600">600</option>
+            <option value="800">800</option>
+            <option value="1000">1000</option>
+        </select>
+        <div id="ResponseInNumbers" class="grey"></div>
+    </div>
+    <div class="myDiv">
+        <span><b>RESPONSE</b></span>
+        <textarea id="response" title="The agents response arives here" class="txtarea" rows="4" cols="50"
+            placeholder="RESPONSE..."></textarea>
+        <button id="but_AddToHistory" title="Add your prompt and the response to the conversation history">ADD TO
+            HISTORY</button>
+    </div>
+    <a href="https://github.com/Slamsneider/SingleTom" target="_blank">
+        <img src="SingleTomGitHub.png" alt="SingleTom on GitHub" width="80" style="float: right;">
+    </a>
+</body>
+
+</html>
