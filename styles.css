@@ -1,29 +1,51 @@
+@import url('https://fonts.cdnfonts.com/css/typo-angular-rounded-demo');
+@import url('https://fonts.cdnfonts.com/css/tempest-apache');
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Tempest Apache', sans-serif;
     background-color: aliceblue;
     color: #000000;
+    overflow-x: hidden;
 }
 
 .txtarea {
+    font-family: 'Tempest Apache', sans-serif;
     width: 100%;
     height: 100%;
-    border: 1px solid #060606;
-    border-radius: 4px;
+    border: 1px solid #06060600;
+    border-radius: 7px;
+    background-color: #000000;
+    color: white;
     box-sizing: border-box;
+    margin: 1rem 0;
     resize: vertical;
 }
-
+select {
+    font-family: 'Tempest Apache', sans-serif;
+    font-size: 20px;
+    transition: all .4s ease;
+    background-color: black;
+    color: white;
+    border: none;
+    padding: 8px;
+}
+option {
+    font-family: 'Tempest Apache', sans-serif;
+}
+select:hover, option:hover {
+    background-color: black;
+    color: rgb(68, 255, 0);
+}
 .myDiv {
-    border: 1px solid #060606;
+z-index: 9;
+font-family: 'Tempest Apache', sans-serif;
     border-radius: 4px;
     padding: 5px;
     margin: 5px;
-    background-color: rgb(214, 236, 255);
-    color: #000000;
-}
+    backdrop-filter: blur(4px);
 
+}
 .grey {
-    color: #676767;
+    color: #ffffff;
 }
 
 .dark-skin {
@@ -39,4 +61,121 @@ body {
     padding: 5px 10px;
     border-radius: 4px;
     cursor: pointer;
+}
+button {
+    transition: all .5s ease;
+    padding: 15px;
+    border-radius: 9px;
+    color: white;
+    background-color: #000000;
+}
+button:hover {
+    background-color: white;
+    color: #000000;
+    border-radius: 9px;
+}
+
+::-webkit-scrollbar {
+    width: 4px;
+}
+
+::-webkit-scrollbar-track {
+    background-color: rgb(0, 0, 0);
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb {
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+    background: #2bff00;
+}
+
+span{
+    font-family: 'Tempest Apache', sans-serif;
+    font-size: 28px;
+}
+button {
+    font-family: 'Tempest Apache', sans-serif;
+}
+#agentHeading {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    font-size: 18px;
+}
+
+.myDiv {
+    margin: 2rem;
+}
+
+#canv {
+position: fixed;
+top: 0;
+left: 0;
+z-index: -1;
+height: 100%;
+
+}
+.bg__gradient {
+
+}
+
+
+
+
+.card {
+
+
+    border-radius: 10px;
+    font-family: 'Tempest Apache', sans-serif;
+    color: rgb(255, 255, 255);
+    background-image: linear-gradient(135deg, rgba(13, 75, 5, 0.403), rgba(17, 92, 0, 0.323));
+    transition: all ease;
+padding: 3rem;
+    cursor: pointer;
+
+    z-index: 5;
+}
+
+.card:hover {
+
+    color: rgb(255, 255, 255);
+    -webkit-font-smoothing: antialiased;
+    backface-visibility: hidden;
+}
+
+
+
+.kaspace {
+    min-height: 3rem;
+}
+
+.eh {
+    text-align: center; width: 49%; margin: 0 auto;font-size: 19px;
+}
+
+@media only screen and (max-width: 600px) {
+    body {
+        flex-direction: column;
+    }
+    .card {
+        padding: 6PX;
+    }
+    .kaspace {
+        min-height: 0.3rem;
+    }
+    .myDiv {
+        margin:3rem 0;
+    }
+    select {
+        font-size: 14px;
+    }
+    .eh {
+        width: 100%;
+    }
+    span{
+        font-family: 'Tempest Apache', sans-serif;
+        font-size: 18px;
+    }
 }

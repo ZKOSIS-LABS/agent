@@ -2,7 +2,14 @@
 <html lang="en">
 
 <head>
-    <title>SingleTom</title>
+    <title>AgentX</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
+<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+<link rel="shortcut icon" href="/favicon.ico" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+<meta name="apple-mobile-web-app-title" content="AgentX" />
+<link rel="manifest" href="/site.webmanifest" />
     <script src="jquery_3_5_1.min.js"></script>
     <link rel="stylesheet" type="text/css" href="styles.css">
     <script src="functions.js"></script>
@@ -10,39 +17,38 @@
     <script src="agents.js"></script>
     <script src="models.js"></script>
     <script src="dropTextFile.js"></script>
+    <script src="https://unpkg.com/tilt.js@1.1.19/dest/tilt.jquery.js"></script>
 </head>
 
 <body>
-    <table width="100%">
-        <tr>
-            <td>
-                <h1 id="agentHeading"></h1>
-            </td>
-            <td align="right">
-                <button id="skinButton">Background</button>
-            </td>
-        </tr>
-    </table>
-    <div class="myDiv">
-        <span><b>SYSTEM PROMPT</b> - </span>
-        <label for="agent">Agent:</label>
-        <select id="agent" title="Use this agent"></select> <span id="agentDescription" class="grey">.</span>
-        <textarea id="systemprompt" title="This is the agent configuration" class="txtarea" rows="4" cols="50"
-            placeholder="SYSTEM PROMPT..."></textarea>
+    <h1 id="agentHeading"></h1>
+    <style>
+ 
+    </style>
+    <canvas id='canv'></canvas>
+    <div class="bg__gradient"></div>
+    <div class="kaspace">
+
     </div>
-    <div class="myDiv">
-        <span><b>HISTORY</b></span>
-        <button id="but_ClearHistory" title="Clear the History">Clear</button>
-        <textarea id="history"
-            title="This is the conversation history (memory). You can edit it and drag/drop text documents here to add them."
-            class="txtarea DropfileContent" rows="4" cols="50"
-            placeholder="HISTORY... (Drag/drop text documents here)"></textarea>
+
+    <div class="myDiv card eh" >
+
+        <label for="agent">select Agent:</label>
+        <select id="agent" title="Use this agent"></select> <br> <br> <span id="agentDescription" class="grey">.</span>
+        <textare style="display: none !important;" a id="systemprompt" title="This is the agent configuration"
+            class="txtarea" rows="4" cols="50" placeholder="SYSTEM PROMPT"></textarea>
     </div>
-    <div class="myDiv">
+    <style>
+
+    </style>
+    <div class="kaspace">
+
+    </div>
+    <div class="myDiv card">
         <span><b>USER PROMPT</b> </span>
         <button id="but_ClearPrompt" title="Clear the prompt">Clear</button>
         <textarea id="userprompt" title="Write your prompt here" class="txtarea" rows="4" cols="50"
-            placeholder="USER PROMPT..."></textarea>
+            placeholder="USER PROMPT"></textarea>
         <button id="but_send" title="Send the prompt">Send</button>
         <label for="model">Model:</label>
         <select id="model" title="Use this model"></select>
@@ -71,14 +77,115 @@
         </select>
         <div id="ResponseInNumbers" class="grey"></div>
     </div>
-    <div class="myDiv">
+    <div class="myDiv card">
         <span><b>RESPONSE</b></span>
         <textarea id="response" title="The agents response arives here" class="txtarea" rows="4" cols="50"
-            placeholder="RESPONSE..."></textarea>
+            placeholder="RESPONSE"></textarea>
         <button id="but_AddToHistory" title="Add your prompt and the response to the conversation history">ADD TO
             HISTORY</button>
     </div>
+    <div class="myDiv card">
+        <span><b>HISTORY</b></span>
+        <button id="but_ClearHistory" title="Clear the History">Clear</button>
+        <textarea id="history"
+            title="This is the conversation history (memory). You can edit it and drag/drop text documents here to add them."
+            class="txtarea DropfileContent" rows="4" cols="50"
+            placeholder="HISTORY (Drag/drop text documents here)"></textarea>
+    </div>
+    <div class="kaspace">
 
+    </div>
+    <script>
+        const cursor = document.querySelector('.bg__gradient');
+
+        let mouseX = 0;
+        let mouseY = 0;
+
+        let cursorX = 0;
+        let cursorY = 0;
+
+        let speed = 0.01;
+
+        function animate() {
+            let distX = mouseX - cursorX;
+            let distY = mouseY - cursorY;
+
+            cursorX = cursorX + (distX * speed);
+            cursorY = cursorY + (distY * speed);
+
+            cursor.style.left = cursorX + 'px';
+            cursor.style.top = cursorY + 'px';
+
+            requestAnimationFrame(animate);
+        }
+
+
+        animate();
+
+        document.addEventListener('mousemove', (event) => {
+            mouseX = event.pageX;
+            mouseY = event.pageY;
+        })
+
+
+
+            (function ($) {
+
+                "use strict";
+
+                $(".card").tilt({
+                    maxTilt: 15,
+                    perspective: 1500,
+                    easing: "cubic-bezier(.03,.98,.52,.99)",
+                    speed: 500,
+                    glare: false,
+                    maxGlare: 0.2,
+                    scale: 1.01
+                });
+
+            }(jQuery));
+    </script>
+    <script>
+        const canvas = document.getElementById('canv');
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+        const ctx = canvas.getContext('2d');
+        let cols = Math.floor(window.innerWidth / 20) + 1;
+        let ypos = Array(cols).fill(0);
+
+        ctx.fillStyle = '#000';
+        ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+        function matrix() {
+            const w = window.innerWidth;
+            const h = window.innerHeight;
+
+            if (canvas.width !== w) {
+                canvas.width = w;
+                cols = Math.floor(window.innerWidth / 20) + 1;
+                ypos = Array(cols).fill(0);
+            }
+            if (canvas.height !== h) {
+                canvas.height = h;
+            }
+
+            ctx.fillStyle = '#0001';
+            ctx.fillRect(0, 0, w, h);
+
+            ctx.fillStyle = '#0f0';
+            ctx.font = '15pt monospace';
+
+            ypos.forEach((y, ind) => {
+                const text = String.fromCharCode(Math.random() * 128);
+                const x = ind * 20;
+                ctx.fillText(text, x, y);
+                if (y > 100 + Math.random() * 10000) ypos[ind] = 0;
+                else ypos[ind] = y + 20;
+            });
+        }
+
+        setInterval(matrix, 50);
+    </script>
 </body>
 
 </html>
