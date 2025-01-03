@@ -3,9 +3,14 @@
 @import url('https://fonts.cdnfonts.com/css/marhey');
 body {
     font-family: 'Tempest Apache', sans-serif;
-    background-color: aliceblue;
+
     color: #000000;
     overflow-x: hidden;
+    background-image: url(/bg.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
 }
 
 .txtarea {

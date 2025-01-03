@@ -22,7 +22,7 @@
     <style>
  
     </style>
-    <canvas id='canv'></canvas>
+
     <div class="bg__gradient"></div>
     <div class="kaspace">
 
@@ -35,9 +35,12 @@
         <textare style="display: none !important;" a id="systemprompt" title="This is the agent configuration"
             class="txtarea" rows="4" cols="50" placeholder="SYSTEM PROMPT"></textarea>
     </div>
-    <style>
-
-    </style>
+<div style="display: flex; width: 100%; justify-content: center; margin-top: 3rem; align-items: center; margin:0 auto; padding-top: 5rem;" >
+    <video style="width: 450px; height: auto;" autoplay loop muted>
+        <source src="/lala.mp4" type="video/mp4">
+        Your browser does not support HTML video.
+      </video>
+</div>
     <div class="kaspace">
 
     </div>
@@ -81,7 +84,7 @@
         <button id="but_AddToHistory" title="Add your prompt and the response to the conversation history">ADD TO
             HISTORY</button>
     </div>
-    <div class="myDiv card">
+    <div style="display: none;"  class="myDiv card">
         <span><b>HISTORY</b></span>
         <button id="but_ClearHistory" title="Clear the History">Clear</button>
         <textarea id="history"
@@ -142,47 +145,7 @@
 
             }(jQuery));
     </script>
-    <script>
-        const canvas = document.getElementById('canv');
-        canvas.width = window.innerWidth;
-        canvas.height = window.innerHeight;
-        const ctx = canvas.getContext('2d');
-        let cols = Math.floor(window.innerWidth / 20) + 1;
-        let ypos = Array(cols).fill(0);
 
-        ctx.fillStyle = '#000';
-        ctx.fillRect(0, 0, canvas.width, canvas.height);
-
-        function matrix() {
-            const w = window.innerWidth;
-            const h = window.innerHeight;
-
-            if (canvas.width !== w) {
-                canvas.width = w;
-                cols = Math.floor(window.innerWidth / 20) + 1;
-                ypos = Array(cols).fill(0);
-            }
-            if (canvas.height !== h) {
-                canvas.height = h;
-            }
-
-            ctx.fillStyle = '#0001';
-            ctx.fillRect(0, 0, w, h);
-
-            ctx.fillStyle = '#fcf11c';
-            ctx.font = '15pt monospace';
-
-            ypos.forEach((y, ind) => {
-                const text = String.fromCharCode(Math.random() * 128);
-                const x = ind * 20;
-                ctx.fillText(text, x, y);
-                if (y > 100 + Math.random() * 10000) ypos[ind] = 0;
-                else ypos[ind] = y + 20;
-            });
-        }
-
-        setInterval(matrix, 50);
-    </script>
 </body>
 
 </html>
