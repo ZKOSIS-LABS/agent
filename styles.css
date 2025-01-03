@@ -1,14 +1,15 @@
 @import url('https://fonts.cdnfonts.com/css/typo-angular-rounded-demo');
 @import url('https://fonts.cdnfonts.com/css/tempest-apache');
+@import url('https://fonts.cdnfonts.com/css/marhey');
 body {
-    font-family: 'Tempest Apache', sans-serif;
+    font-family: 'Marhey', sans-serif;
     background-color: aliceblue;
     color: #000000;
     overflow-x: hidden;
 }
 
 .txtarea {
-    font-family: 'Tempest Apache', sans-serif;
+    font-family: 'Marhey', sans-serif;
     width: 100%;
     height: 100%;
     border: 1px solid #06060600;
@@ -20,7 +21,7 @@ body {
     resize: vertical;
 }
 select {
-    font-family: 'Tempest Apache', sans-serif;
+    font-family: 'Marhey', sans-serif;
     font-size: 20px;
     transition: all .4s ease;
     background-color: black;
@@ -29,15 +30,15 @@ select {
     padding: 8px;
 }
 option {
-    font-family: 'Tempest Apache', sans-serif;
+    font-family: 'Marhey', sans-serif;
 }
 select:hover, option:hover {
     background-color: black;
-    color: rgb(68, 255, 0);
+    color: rgb(0, 204, 255);
 }
 .myDiv {
 z-index: 9;
-font-family: 'Tempest Apache', sans-serif;
+font-family: 'Marhey', sans-serif;
     border-radius: 4px;
     padding: 5px;
     margin: 5px;
@@ -88,15 +89,15 @@ button:hover {
 ::-webkit-scrollbar-thumb {
     -webkit-border-radius: 5px;
     border-radius: 5px;
-    background: #2bff00;
+    background: #00ccff;
 }
 
 span{
-    font-family: 'Tempest Apache', sans-serif;
+    font-family: 'Marhey', sans-serif;
     font-size: 28px;
 }
 button {
-    font-family: 'Tempest Apache', sans-serif;
+    font-family: 'Marhey', sans-serif;
 }
 #agentHeading {
     position: fixed;
@@ -128,9 +129,9 @@ height: 100%;
 
 
     border-radius: 10px;
-    font-family: 'Tempest Apache', sans-serif;
+    font-family: 'Marhey', sans-serif;
     color: rgb(255, 255, 255);
-    background-image: linear-gradient(135deg, rgba(13, 75, 5, 0.403), rgba(17, 92, 0, 0.323));
+    background-image: linear-gradient(135deg, rgba(5, 75, 67, 0.403), rgba(0, 72, 92, 0.323));
     transition: all ease;
 padding: 3rem;
     cursor: pointer;
@@ -175,7 +176,7 @@ padding: 3rem;
         width: 100%;
     }
     span{
-        font-family: 'Tempest Apache', sans-serif;
+        font-family: 'Marhey', sans-serif;
         font-size: 18px;
     }
 }
