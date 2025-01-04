@@ -97,7 +97,7 @@ button:hover {
 ::-webkit-scrollbar-thumb {
     -webkit-border-radius: 5px;
     border-radius: 5px;
-    background: #00ccff;
+    background: #fff200;
 }
 
 span{
@@ -139,7 +139,7 @@ height: 100%;
     border-radius: 10px;
     font-family: 'Tempest Apache', sans-serif;
     color: rgb(255, 255, 255);
-    background-image: linear-gradient(135deg, rgba(100, 91, 2, 0.403), rgba(91, 92, 0, 0.323));
+    background-image: linear-gradient(135deg, rgba(43, 2, 100, 0.403), rgba(0, 92, 92, 0.323));
     transition: all ease;
 padding: 3rem;
     cursor: pointer;
