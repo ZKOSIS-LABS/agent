@@ -164,7 +164,8 @@ padding: 3rem;
     text-align: center; width: 49%; margin: 0 auto;font-size: 19px;
 }
 .mafufu {
-    position: fixed; top: 0; left: 0; margin: 10px; height: 100px; width: auto;
+    position: fixed; top: 0; left: 0; margin: 10px; height: 100px; width: auto;   -webkit-transform: scaleX(-1);
+    transform: scaleX(-1);
 }
 @media only screen and (max-width: 600px) {
     body {
@@ -196,6 +197,7 @@ padding: 3rem;
 
 .hoho {
     transition: all 0.4s ease;
+
 }
 .hoho:hover {
     transform: scale(1.5);
